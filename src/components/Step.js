@@ -4,7 +4,7 @@ const Step = ({step,handlenext,handleprevious,handlesubmit}) => {
   return (
     <>
         {step===1 &&
-        <form>
+        <form id="step1">
             <h2>Customer Details</h2>
             <label htmlFor="first_name">First Name:</label>
             <input
@@ -21,7 +21,7 @@ const Step = ({step,handlenext,handleprevious,handlesubmit}) => {
         }
         {
             step===2 &&
-            <form>
+            <form id="step2">
                 <h2>Car Details</h2>
                 <label htmlFor="model">Model:</label>
                 <input
@@ -37,7 +37,7 @@ const Step = ({step,handlenext,handleprevious,handlesubmit}) => {
         }
         {
             step===3 &&
-            <form>
+            <form id="step3">
                 <h2>Payment Details</h2>
                 <label htmlFor="card_info">Credit Card Number:</label>
                 <input
