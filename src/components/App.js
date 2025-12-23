@@ -21,8 +21,7 @@ const App = () => {
 
   const handlesubmit=()=>{
     if(step===3){
-      let final=alert("form submitted")
-      setStep(final)
+      console.log("Form submitted");
     }
   }
   return (
