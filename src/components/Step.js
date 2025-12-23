@@ -16,7 +16,7 @@ const Step = ({step,handlenext,handleprevious,handlesubmit}) => {
             type="text"
             id="last_name"
             /><br></br>
-            <button onClick={handlenext}>Next</button>
+            <button type="button" onClick={handlenext}>Next</button>
         </form>
         }
         {
@@ -31,8 +31,8 @@ const Step = ({step,handlenext,handleprevious,handlesubmit}) => {
                 <input
                 id="car_price"
                 /><br></br>
-                <button onClick={handleprevious}>Previous</button>
-                <button onClick={handlenext}>Next</button>
+                <button type="button" onClick={handleprevious}>Previous</button>
+                <button type="button" onClick={handlenext}>Next</button>
             </form>
         }
         {
@@ -48,8 +48,8 @@ const Step = ({step,handlenext,handleprevious,handlesubmit}) => {
                 id="expiry_date"
                 type="month"
                 /><br></br>
-                <button onClick={handleprevious}>Previous</button>
-                <button onClick={handlesubmit}>Submit</button>
+                <button type="button" onClick={handleprevious}>Previous</button>
+                <button type="button" onClick={handlesubmit}>Submit</button>
             </form>
         }
     </>
