@@ -4,4 +4,4 @@ import MultiStepForm from "./components/MultiStepForm";
 
 
 
-ReactDOM.render(<MultiStepForm />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
