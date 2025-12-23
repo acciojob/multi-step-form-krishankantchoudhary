@@ -1,9 +1,57 @@
+// import React, { useState } from "react";
+// import "./../styles/App.css";
+// import Step from "./Step";
+
+// const App = () => {
+//   const [step, setStep] = useState(1);
+
+//   const [formData, setFormData] = useState({
+//     first_name: "",
+//     last_name: "",
+//     model: "",
+//     car_price: "",
+//     card_info: "",
+//     expiry_date: ""
+//   });
+
+//   const handleChange = (e) => {
+//     setFormData(prev => ({
+//       ...prev,
+//       [e.target.id]: e.target.value
+//     }));
+//   };
+
+//   const handlenext = () => {
+//     setStep(prev => (prev < 3 ? prev + 1 : prev));
+//   };
+
+//   const handleprevious = () => {
+//     setStep(prev => (prev > 1 ? prev - 1 : prev));
+//   };
+
+//   const handlesubmit = () => {
+//     console.log("Form submitted");
+//   };
+
+//   return (
+//     <Step
+//       step={step}
+//       data={formData}
+//       onChange={handleChange}
+//       handlenext={handlenext}
+//       handleprevious={handleprevious}
+//       handlesubmit={handlesubmit}
+//     />
+//   );
+// };
+
+// export default App;
 import React, { useState } from "react";
 import "./../styles/App.css";
 import Step from "./Step";
 
 const App = () => {
-  const [step, setStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(1);
 
   const [formData, setFormData] = useState({
     first_name: "",
@@ -11,37 +59,39 @@ const App = () => {
     model: "",
     car_price: "",
     card_info: "",
-    expiry_date: ""
+    expiry_date: "",
   });
 
+  const nextStep = () => {
+    setCurrentStep((prev) => Math.min(prev + 1, 3));
+  };
+
+  const prevStep = () => {
+    setCurrentStep((prev) => Math.max(prev - 1, 1));
+  };
+
   const handleChange = (e) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.id]: e.target.value
-    }));
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
   };
 
-  const handlenext = () => {
-    setStep(prev => (prev < 3 ? prev + 1 : prev));
-  };
-
-  const handleprevious = () => {
-    setStep(prev => (prev > 1 ? prev - 1 : prev));
-  };
-
-  const handlesubmit = () => {
-    console.log("Form submitted");
+  const handleSubmit = () => {
+    console.log("Form Submitted:", formData);
+    alert("Form submitted successfully!");
   };
 
   return (
-    <Step
-      step={step}
-      data={formData}
-      onChange={handleChange}
-      handlenext={handlenext}
-      handleprevious={handleprevious}
-      handlesubmit={handlesubmit}
-    />
+    <div>
+      {/* Do not remove the main div */}
+      <Step
+        step={currentStep}
+        formData={formData}
+        onChange={handleChange}
+        nextStep={nextStep}
+        prevStep={prevStep}
+        onSubmit={handleSubmit}
+      />
+    </div>
   );
 };
 
