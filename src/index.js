@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import MultiStepForm from "./components/MultiStepForm";
+import App from "./components/App";
 
 
 
