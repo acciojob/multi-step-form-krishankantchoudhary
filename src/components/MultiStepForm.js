@@ -23,17 +23,23 @@ const MultiStepForm = () => {
     }));
   };
 
-  const handlenext=()=>{
-    if(step<3){
-      setStep(step+1)
-    }
-  }
+  // const handlenext=()=>{
+  //   if(step<3){
+  //     setStep(step+1)
+  //   }
+  // }
+  const handlenext = () => {
+  setStep(prev => (prev < 3 ? prev + 1 : prev));
+};
 
-  const handleprevious=()=>{
-    if(step>1){
-      setStep(step-1)
-    }
-  }
+  // const handleprevious=()=>{
+  //   if(step>1){
+  //     setStep(step-1)
+  //   }
+  // }
+  const handleprevious = () => {
+  setStep(prev => (prev > 1 ? prev - 1 : prev));
+};
 
   const handlesubmit=()=>{
     
