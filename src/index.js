@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App";
+import MultiStepForm from "./components/MultiStepForm";
 
 
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<MultiStepForm />, document.getElementById("root"));
